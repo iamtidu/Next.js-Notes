@@ -23,9 +23,70 @@ Whether you're an individual developer or part of a larger team, Next.js can hel
 > how to run
 
 ```json
-"dev": "next dev",
+"dev": "next dev", // use this for run
 "build": "next build",
 "start": "next start",
 "lint": "next lint"
 ```
 
+> Example
+
+``` javascript
+export default function Home() {
+  return (
+    <main>
+    <h1 className="">UDIT KUMAR</h1>
+    <button onClick={()=>alert("udit")}>Click me</button>
+    </main>
+  );
+}
+```
+
+```json
+Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+```
+
+Use the `"use client";` at the top
+
+> correct code
+
+``` javascript
+"use client";
+
+export default function Home() {
+  return (
+    <main>
+    <h1 className="">UDIT KUMAR</h1>
+    <button onClick={()=>alert("udit")}>Click me</button>
+    </main>
+  );
+}
+```
+
+## Using inner components
+
+``` javascript
+"use client";
+
+const  InnerComponet = ()=>{
+  return(
+    <>
+    hello inner component
+    </>
+  )
+}
+
+export default function Home() {
+  return (
+    <main>
+    <h1 className="">UDIT KUMAR</h1>
+    <button onClick={()=>apple()}>Click me</button>
+    {/* <InnerComponet/> */} // render as componet
+    {InnerComponet()} // call as function
+    </main>
+  );
+}
+```
