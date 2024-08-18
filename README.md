@@ -23,7 +23,7 @@ Whether you're an individual developer or part of a larger team, Next.js can hel
 > how to run
 
 ```json
-"dev": "next dev", // use this for run
+"dev": "next dev",
 "build": "next build",
 "start": "next start",
 "lint": "next lint"
@@ -42,7 +42,7 @@ export default function Home() {
 }
 ```
 
-```json
+```
 Error: Event handlers cannot be passed to Client Component props.
   <button onClick={function onClick} children=...>
                   ^^^^^^^^^^^^^^^^^^
